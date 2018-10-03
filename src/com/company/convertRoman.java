@@ -1,8 +1,12 @@
 package com.company;
 
 import java.util.TreeMap;
+import java.util.Scanner;
+
 
 public class convertRoman {
+
+
 
     private final static TreeMap<Integer, String> map = new TreeMap<>();
     static {
@@ -20,17 +24,27 @@ public class convertRoman {
         map.put(4, "IV");
         map.put(1, "I");
 
-
-
     }
+
+
     public final static String toRoman(int number){
-        int 1 = map.floorKey(number);
-        if (number ==1){
+        int l = map.floorKey(number);
+        if (number == l){
             return map.get(number);
         }
-        return map.get(1) + toRoman(number -1);
+        return map.get(l) + toRoman(number - l);
     }
-    public void testRomanConversion(){
-        for ()
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number = s.nextInt();
+        System.out.println(number);
+        toRoman(number);
+        System.out.println(convertRoman.toRoman(number));
+
+
+
     }
+
 }
